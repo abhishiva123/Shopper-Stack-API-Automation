@@ -1,6 +1,6 @@
-import { test, expect } from '../../src/fixtures/api.fixture';
-import { STATUS_CODES } from '../../src/config/status-codes';
-import { createShopperData } from '../../src/utils/test-data';
+import { test, expect } from '../../../src/fixtures/api.fixture';
+import { STATUS_CODES } from '../../../src/config/status-codes';
+import { createShopperData } from '../../../src/utils/test-data';
 
 test('Update shopper details', async ({
     shopperService,
