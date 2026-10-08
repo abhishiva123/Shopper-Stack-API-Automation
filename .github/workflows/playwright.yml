@@ -1,11 +1,11 @@
-name: Playwright Tests
+name: Shopper Stack Api Automation
 on:
   push:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
 jobs:
-  test:
+  api-tests:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
@@ -18,6 +18,8 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
+      env:
+        BASE_URL: ${{ secrets.BASE_URL }}
       run: npx playwright test
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
